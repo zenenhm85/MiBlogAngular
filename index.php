@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" type="imgage/x-icon" href="assets/images/logo.ico"  />
-        <title>ZCode</title>
-
-        <!--HOJA DE ESTILOS-->
-        <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+        <?php include 'head.php' ?>
 
     </head>
     <body>
-        <?php include 'cabecera.php' ?>
+        <?php include 'nav.php' ?>
 
         <div id="slider" class="slider-big">
             <h1>Bienvenido a Zenén Hernández - Blog de Programación</h1>
@@ -81,12 +75,7 @@
             <div class="clearfix"></div>
         </div>
 
-        <footer id="footer">
-            <div class="center">
-                <p>
-                    &copy; Máster en frameworks para JavaScript de victorroblesweb.es 
-                </p>
-            </div>
-        </footer>
+        
+        <?php include 'footer.php' ?>        
     </body>
 </html>

@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <title>Maquetación para el Master en Frameworks JavaScript</title>
-
-        <!--HOJA DE ESTILOS-->
-        <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
-
+        <?php include 'head.php' ?>
     </head>
     <body>
-        <?php include 'cabecera.php' ?>
+        <?php include 'nav.php' ?>
 
         <div class="center">
             <section id="content">
@@ -57,12 +52,6 @@
             <div class="clearfix"></div>
         </div>
 
-        <footer id="footer">
-            <div class="center">
-                <p>
-                    &copy; Máster en frameworks para JavaScript de victorroblesweb.es 
-                </p>
-            </div>
-        </footer>
+        <?php include 'footer.php' ?>
     </body>
 </html>

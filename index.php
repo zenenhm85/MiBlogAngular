@@ -3,52 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Maquetación para el Master en Frameworks JavaScript</title>
+        <link rel="shortcut icon" type="imgage/x-icon" href="assets/images/logo.ico"  />
+        <title>ZCode</title>
 
         <!--HOJA DE ESTILOS-->
         <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
 
     </head>
     <body>
-        <header id="header">
-            <div class="center">
-                <!-- LOGO -->
-                <div id="logo">
-                    <img src="assets/images/angular.svg" class="app-logo" alt="Logotipo" />
-                    <span id="brand">
-                        <strong>Curso</strong>Angular
-                    </span>
-                </div>
-                
-                <!-- MENU -->
-                <nav id="menu">
-                    <ul>
-                        <li>
-                            <a href="index.html">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-                        <li>
-                            <a href="formulario.html">Formulario</a>
-                        </li>
-                        <li>
-                            <a href="#">Pagina 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Pagina 2</a>
-                        </li>                            
-                    </ul>
-                </nav>
-
-                <!--LIMPIAR FLOTADOS-->
-                <div class="clearfix"></div>
-            </div>
-        </header>
+        <?php include 'cabecera.php' ?>
 
         <div id="slider" class="slider-big">
-            <h1>Bienvenido al Curso de Angular con Víctor Robles de victorroblesweb.es</h1>
-            <a href="#" class="btn-white">Ir al blog</a>
+            <h1>Bienvenido a Zenén Hernández - Blog de Programación</h1>
+            <a href="blog.php" class="btn-white">Ir al blog</a>
         </div>
 
         <div class="center">

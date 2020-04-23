@@ -22,8 +22,6 @@ app.use((req, res, next) => {
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
- 
-
 // Añadir prefijos a rutas y  CARGAR RUTAS
 app.use('/api', article_routes);
 

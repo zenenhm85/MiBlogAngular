@@ -14,20 +14,20 @@
         <nav id="menu">
             <ul>
                 <li>
-                    <a href="index.php">Inicio</a>
+                    <a [routerLink]="['/home']" [routerLinkActive]="['active']">Inicio</a>
                 </li>
                 <li>
-                    <a href="blog.php">Blog</a>
+                    <a [routerLink]="['/blog']" [routerLinkActive]="['active']">Blog</a>
                 </li>
                 <li>
-                    <a href="formulario.php">Formulario</a>
+                    <a [routerLink]="['/formulario']" [routerLinkActive]="['active']">Formulario</a>
                 </li>
                 <li>
-                    <a href="#">Pagina 1</a>
-                </li>
+                    <a [routerLink]="['/probando']" [routerLinkActive]="['active']">Probando</a>
+                </li> 
                 <li>
-                    <a href="#">Pagina 2</a>
-                </li>                            
+                    <a [routerLink]="['/peliculas']" [routerLinkActive]="['active']">Películas</a>
+                </li>                                         
             </ul>
         </nav>
 

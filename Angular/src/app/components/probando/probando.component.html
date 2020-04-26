@@ -1,0 +1,12 @@
+<h1 class="subheader">Probando varias cosas</h1>
+<div *ngIf="nombre && apellidos;then plantilla1 else plantilla2"></div>
+<ng-template #plantilla1>
+    <p>Mi nombre es: {{nombre}}</p>
+    <p>Mis apellidos: {{apellidos}}</p>
+</ng-template>
+<ng-template #plantilla2>
+    <p>No hay parámetros URL</p>
+</ng-template>
+
+
+

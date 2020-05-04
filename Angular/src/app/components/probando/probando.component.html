@@ -1,12 +1,24 @@
-<h1 class="subheader">Probando varias cosas</h1>
-<div *ngIf="nombre && apellidos;then plantilla1 else plantilla2"></div>
-<ng-template #plantilla1>
-    <p>Mi nombre es: {{nombre}}</p>
-    <p>Mis apellidos: {{apellidos}}</p>
-</ng-template>
-<ng-template #plantilla2>
-    <p>No hay parámetros URL</p>
-</ng-template>
+<app-slider 
+[nombre]="'Probando'"
+[size]="'small'"
+[home]=false
+></app-slider>
 
+<div class="center">
 
+    <section id="content">
+        <h2 class="subheader">Probando varias cosas</h2>
+        <div *ngIf="nombre && apellidos;then plantilla1 else plantilla2"></div>
+        <ng-template #plantilla1>
+            <p>Mi nombre es: {{nombre}}</p>
+            <p>Mis apellidos: {{apellidos}}</p>
+        </ng-template>
+        <ng-template #plantilla2>
+            <p>No hay parámetros URL</p>
+        </ng-template>
 
+    </section>
+
+    <app-sidebar></app-sidebar>
+    <div class="clearfix"></div>
+</div>

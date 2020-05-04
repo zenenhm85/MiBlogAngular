@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import {Pelicula} from '../../models/pelicula';
+import { PeliculaService } from '../../services/peliculas.sevice';
 
 @Component({
   selector: 'app-peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers:[PeliculaService]
 })
 export class PeliculasComponent implements OnInit {
 
-  public peliculas: Array<any>;
+  public peliculas: Array<Pelicula>;
 
-  constructor() { 
-    this.peliculas = [
-      {title: "The social network", image:"assets/images/network.jpg", year: 2012},
-      {title: "El señor de los anillos", image:"assets/images/señor.jpg",year: 2015},
-      {title: "El Hobbit", image:"assets/images/señor.jpg",year: 2016},
-      {title: "Rescatando al soldado Ryan", image:"assets/images/ryan.jpg",year: 2010}
-    ];
+  constructor(
+    private _peliculaService:PeliculaService
+  ) { 
+    this.peliculas = this._peliculaService.getPeliculas();
 
   }
 
   ngOnInit(): void {
+      
   }
 
 }

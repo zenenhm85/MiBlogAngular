@@ -1,0 +1,31 @@
+<app-slider [nombre]="'Crear Artículo'" [size]="'small'" [home]=false></app-slider>
+<div class="center">
+    <section id="content">
+        <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" name="title" #title="ngModel" [(ngModel)]="article.title" required />
+                <small class="errorred" *ngIf="!title.valid && title.touched">El título no es válido</small>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea name="bio" name="content" #content="ngModel" [(ngModel)]="article.content"
+                    required></textarea>
+                <small class="errorred" *ngIf="!content.valid && content.touched">El contenido no es válido</small>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Imagen</label>
+                <input type="file" name="file0" />
+            </div>
+
+            <div class="clearfix"></div>
+
+            <input type="submit" value="Guardar" class="btn btn-success" [disabled]="articleForm.invalid" />
+        </form>
+    </section>
+
+    <app-sidebar></app-sidebar>
+    <div class="clearfix"></div>
+</div>

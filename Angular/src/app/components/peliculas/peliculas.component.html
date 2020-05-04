@@ -1,21 +1,32 @@
-<h1 class="subheader">Lista de películas({{peliculas.length}})</h1>
-<div id="articles" *ngIf="peliculas">
-    <article class="article-item"  *ngFor="let pelicula of peliculas; let i = index">
-        <div class="image-wrap">
-            <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
-        </div>    
-        <h2>{{i + 1}}- {{pelicula.title}}</h2>
-        <span class="date">
-            Hace 5 minutos
-        </span>
-        <span  [ngClass] = "{
-            'year-green':pelicula.year > 2012,
-            'year-red':pelicula.year <= 2012}"> 
-            {{pelicula.year}}
-        </span>
-        <a href="#">Leer más</a>
-        <div class="clearfix"></div>
-    </article>
-    <!--AÑADIR ARTICULOS VIA JS-->
-</div>
+<app-slider [nombre]="'Películas'" [size]="'small'" [home]=false></app-slider>
 
+<div class="center">
+
+    <section id="content">
+        <h2 class="subheader">Lista de películas ({{peliculas.length}})</h2>
+
+        <div id="articles" *ngIf="peliculas">
+            <article class="article-item" *ngFor="let pelicula of peliculas; let i = index">
+                <div class="image-wrap">
+                    <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
+                </div>
+                <h2>{{i + 1}}- {{pelicula.title}}</h2>
+                <span class="date">
+                    Hace 5 minutos
+                </span>
+                <span [ngClass]="{
+                    'year-green':pelicula.year > 2012,
+                    'year-red':pelicula.year <= 2012}">
+                    {{pelicula.year}}
+                </span>
+                <a href="#">Leer más</a>
+                <div class="clearfix"></div>
+            </article>
+            <!--AÑADIR ARTICULOS VIA JS-->
+        </div>
+
+    </section>
+
+    <app-sidebar></app-sidebar>
+    <div class="clearfix"></div>
+</div>

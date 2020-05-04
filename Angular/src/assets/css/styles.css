@@ -204,11 +204,41 @@ body {
    transition: 300ms all;
    border: none;
    cursor:pointer;
+   text-align: center;
 }
 
 .btn-success{
     background: rgb(23, 150, 19);
 }
+.btn-warning{
+    background: rgba(119,194,81,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(119,194,81,1) 0%, rgba(8,145,42,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(119,194,81,1)), color-stop(100%, rgba(8,145,42,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(119,194,81,1) 0%, rgba(8,145,42,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(119,194,81,1) 0%, rgba(8,145,42,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(119,194,81,1) 0%, rgba(8,145,42,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(119,194,81,1) 0%, rgba(8,145,42,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#77c251', endColorstr='#08912a', GradientType=1 );
+    color: white !important;
+    text-decoration: none;
+}
+.btn-danger{
+    background: rgb(236, 48, 48);
+    color: white !important;
+    text-decoration: none;
+}
+.errorred{
+    color: red;
+}
+.btn-warning:hover,
+.btn-danger:hover{
+    opacity: 0.6;
+    transition: all 300ms;
+}
+.buttons{
+    margin-top: 40px;
+}
+
 
 .btn-success:hover{
     background:black;
@@ -229,6 +259,7 @@ body {
 }
 
 input[type="text"],
+input[type="file"],
 textarea{
     width: 100%;
     min-height: 30px;

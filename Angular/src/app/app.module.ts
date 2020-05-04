@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {routing,appRoutingProviders} from './app.routing';
+import { routing,appRoutingProviders } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
+import { MomentModule } from 'angular2-moment';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +17,11 @@ import { ProbandoComponent } from './components/probando/probando.component';
 import { from } from 'rxjs';
 import { ErrorComponent } from './components/error/error.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
+import { ArticleCreateComponent } from './components/article-create/article-create.component';
+
 
 
 @NgModule({
@@ -28,11 +36,18 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
     FormularioComponent,
     ProbandoComponent,
     ErrorComponent,
-    PeliculasComponent
+    PeliculasComponent,
+    ArticlesComponent,
+    ArticleComponent,
+    SearchComponent,
+    ArticleCreateComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpClientModule,
+    MomentModule,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

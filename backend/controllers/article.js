@@ -34,7 +34,13 @@ var controller = {
             var article = new Article();
             article.title = params.title;
             article.content = params.content;
-            article.image = null;
+            if(params.image){
+                article.image = params.image;
+            }
+            else{
+                article.image = null;
+            }
+            
 
             //Guardar el objeto(articulo)
             article.save(function(err,articleStored){

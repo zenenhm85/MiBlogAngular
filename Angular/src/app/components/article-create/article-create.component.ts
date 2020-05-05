@@ -16,6 +16,28 @@ export class ArticleCreateComponent implements OnInit {
   public url: any;
   public status:string;
 
+  afuConfig = {
+    multiple: false,
+    formatsAllowed: ".jpg,.png,.gif,.jpeg",
+    maxSize: "50",
+    uploadAPI:  {
+      url:Global.url+'upload-image'
+    },
+    theme: "attachPin",
+    hideProgressBar: true,
+    hideResetBtn: true,
+    hideSelectBtn: false,
+    replaceTexts: {
+      selectFileBtn: 'Select Files',
+      resetBtn: 'Reset',
+      uploadBtn: 'Upload',
+      dragNDropBox: 'Drag N Drop',
+      attachPinBtn: 'Suba su imagen del artículo...',
+      afterUploadMsg_success: 'Successfully Uploaded !',
+      afterUploadMsg_error: 'Upload Failed !'
+    }
+};
+
   constructor(private _articleService: ArticleService, private _route: ActivatedRoute, private _router: Router) { 
     this.article = new Article('','','',null,null);
   }
@@ -40,6 +62,10 @@ export class ArticleCreateComponent implements OnInit {
       }  
       
     );  
+  }
+  imageUpload(data){
+    let image_data = JSON.parse(data.response);
+    this.article.image = image_data.image;
   }
 
 }

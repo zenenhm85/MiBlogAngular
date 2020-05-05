@@ -4,6 +4,7 @@ import { routing,appRoutingProviders } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 import {FormsModule} from '@angular/forms';
+import { AngularFileUploaderModule } from "angular-file-uploader"
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,6 +22,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArticleCreateComponent } from './components/article-create/article-create.component';
+
 
 
 
@@ -47,7 +49,8 @@ import { ArticleCreateComponent } from './components/article-create/article-crea
     routing,
     HttpClientModule,
     MomentModule,
-    FormsModule
+    FormsModule,
+    AngularFileUploaderModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

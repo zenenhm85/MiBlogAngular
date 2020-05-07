@@ -6,6 +6,7 @@ import { MomentModule } from 'angular2-moment';
 import {FormsModule} from '@angular/forms';
 import { AngularFileUploaderModule } from "angular-file-uploader"
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SliderComponent } from './components/slider/slider.component';
@@ -22,6 +23,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArticleCreateComponent } from './components/article-create/article-create.component';
+import { ArticleEditComponent } from './components/article-edit/article-edit.component';
 
 
 
@@ -42,7 +44,8 @@ import { ArticleCreateComponent } from './components/article-create/article-crea
     ArticlesComponent,
     ArticleComponent,
     SearchComponent,
-    ArticleCreateComponent
+    ArticleCreateComponent,
+    ArticleEditComponent
   ],
   imports: [
     BrowserModule,

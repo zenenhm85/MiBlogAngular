@@ -11,6 +11,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArticleCreateComponent } from './components/article-create/article-create.component';
+import {ArticleEditComponent} from './components/article-edit/article-edit.component';
 
 //Array de Rutas
 
@@ -21,6 +22,7 @@ const appRoutes:Routes = [
     {path:'buscar/:search',component:SearchComponent},
     {path:'blog/articulo/:id',component:ArticleComponent},
     {path:'blog/crear',component:ArticleCreateComponent},
+    {path:'blog/editar/:id',component:ArticleEditComponent},
     {path:'formulario',component:FormularioComponent},
     {path:'probando',component:ProbandoComponent},
     {path:'probando/:nombre/:apellidos',component:ProbandoComponent},

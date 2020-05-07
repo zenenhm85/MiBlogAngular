@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
-
 import {Article} from '../../models/article';
 import { ArticleService } from '../../services/article.service';
+import swal from 'sweetalert';
+
+
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Global } from '../../services/global';
 import { from } from 'rxjs';
-import swal from 'sweetalert';
 
 @Component({
-  selector: 'app-article-create',
-  templateUrl: './article-create.component.html',
-  styleUrls: ['./article-create.component.css'],
+  selector: 'app-article-edit',
+  templateUrl: './article-edit.component.html',
+  styleUrls: ['./article-edit.component.css'],
   providers:[ArticleService]
 })
-export class ArticleCreateComponent implements OnInit {
+export class ArticleEditComponent implements OnInit {
   public article:Article;
   public url: any;
   public status:string;
@@ -43,23 +43,24 @@ export class ArticleCreateComponent implements OnInit {
 
   constructor(private _articleService: ArticleService, private _route: ActivatedRoute, private _router: Router) { 
     this.article = new Article('','','',null,null);
+    this.url = Global.url;
   }
 
   ngOnInit(): void {
+    this.getArticle();
   }
   onSubmit(){
-    this._articleService.create(this.article).subscribe(
+    this._articleService.update(this.article._id,this.article).subscribe(
       response => {
         if(response.status == 'success'){
           this.status = 'success';
           this.article = response.article;
-
           swal(
-            'Artículo creado',
-            'Artículo creado correctamente',
+            'Artículo editado',
+            'Artículo editado correctamente',
             'success'
           );
-          this._router.navigate(['/blog']);           
+          this._router.navigate(['/blog/articulo',this.article._id]);           
         }
         else{
           this.status = 'error';   
@@ -72,9 +73,29 @@ export class ArticleCreateComponent implements OnInit {
       
     );  
   }
+
   imageUpload(data){
     let image_data = JSON.parse(data.response);
     this.article.image = image_data.image;
   }
+  getArticle(){
+    this._route.params.subscribe((params:Params)=>{     
+      let id = params['id'];
+      this._articleService.getArticle(id).subscribe(
+        response => {
+          if(response.article){
+            this.article = response.article;
+          }
+          else{
+            this._router.navigate(['/home']);
+          }  
+        },
+        error => {
+          this._router.navigate(['/home']);
+        }  
+      )     
+    });
+  }
+  
 
 }
